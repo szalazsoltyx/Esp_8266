@@ -1,0 +1,36 @@
+# Example configuration entry
+esphome:
+  name: dht01
+  platform: ESP8266
+  board: esp01
+
+captive_portal:
+
+api:
+  password: "s5z4aw"
+
+ota:
+  safe_mode: True
+  password: "s5z4aw"
+
+wifi:
+  ssid: "Kurucz"
+  password: "#C8+s<MY"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "dht01 Fallback Hotspot"
+    password: "s5z4awyx"
+
+sensor:
+    platform: dht
+    model: DHT11
+    pin: GPIO2
+    temperature:
+      name: "Iroda Temperature"
+    humidity:
+      name: "Iroda Humidity"
+    update_interval: 60s
+
+logger:
+  level: DEBUG
